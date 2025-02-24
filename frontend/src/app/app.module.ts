@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ExamListComponent } from './exam-list/exam-list.component';
 import { AddExamComponent } from './add-exam/add-exam.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     FullnamePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

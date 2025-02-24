@@ -9,7 +9,7 @@ app.use(cors());
 
 
 app.get('/api/exams', (req, res) => {
-  res.json(data);
+  res.json(data.exams);
 });
 
 app.post('/api/exams', (req, res) => {

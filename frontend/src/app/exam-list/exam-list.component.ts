@@ -18,6 +18,7 @@ export class ExamListComponent implements OnInit {
    */
   ngOnInit(): void {
     this.examService.getExams().subscribe(data => {
+      console.log(data)
       this.exams = data;
     });
   }
