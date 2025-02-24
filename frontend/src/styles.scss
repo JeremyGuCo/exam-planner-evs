@@ -10,17 +10,17 @@
     background-color: #d4f8e8;
     color: #28a745;
   }
-  
+
   &.to-organize {
     background-color: #ffe5d5;
     color: #ff6200;
   }
-  
+
   &.canceled {
     background-color: #ffd5d5;
     color: #dc3545;
   }
-  
+
   &.pending {
     background-color: #e0e0e0;
     color: #666;
@@ -40,4 +40,24 @@
   &:hover {
     background-color: #e55a00;
   }
+}
+
+.btn-secondary {
+  background: #ddd;
+  color: #333;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: #ccc;
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 10px;
 }

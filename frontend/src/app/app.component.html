@@ -6,10 +6,17 @@
       Organiser un examen
     </button>
   </div>
-  <app-exam-list></app-exam-list>
+  <app-exam-list (examAdded)="onExamAdded()"></app-exam-list>
 
   <app-add-exam
     *ngIf="showAddExamDialog"
     (close)="closeAddExamDialog()"
+    (examAdded)="onExamAdded()"
   ></app-add-exam>
 </div>
+
+<div
+  class="modal-overlay"
+  *ngIf="showAddExamDialog"
+  (click)="closeAddExamDialog()"
+></div>

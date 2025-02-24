@@ -6,20 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // Property to control the display of the add exam form
-  showAddExamDialog = false;
+  showAddExamDialog: boolean = false;
 
-  /**
-   * Opens the add form
-   */
   openAddExamDialog(): void {
     this.showAddExamDialog = true;
   }
 
-  /**
-   * Closes the add form
-   */
   closeAddExamDialog(): void {
     this.showAddExamDialog = false;
+  }
+
+  onExamAdded(): void {
+    this.closeAddExamDialog();
   }
 }

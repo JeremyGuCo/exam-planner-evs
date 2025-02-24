@@ -1,26 +1,48 @@
+<div class="modal-overlay" (click)="onCancel()"></div>
+
 <div class="modal">
-  <h2>Organiser un Examen</h2>
-  <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
-    <label for="firstName">Prénom :</label>
-    <input id="firstName" formControlName="firstName" required />
+  <div class="modal-header">
+    <h2>Organiser un Examen</h2>
+    <button class="close-btn" (click)="onCancel()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
 
-    <label for="lastName">Nom :</label>
-    <input id="lastName" formControlName="lastName" required />
+  <div class="modal-body">
+    <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">Prénom :</label>
+        <input id="firstName" formControlName="firstName" required />
+      </div>
 
-    <label for="date">Date :</label>
-    <input id="date" formControlName="date" required />
+      <div class="form-group">
+        <label for="lastName">Nom :</label>
+        <input id="lastName" formControlName="lastName" required />
+      </div>
 
-    <label for="time">Heure :</label>
-    <input id="time" formControlName="time" required />
+      <div class="form-group">
+        <label for="date">Date :</label>
+        <input type="date" id="date" formControlName="date" required />
+      </div>
 
-    <label for="location">Lieu :</label>
-    <input id="location" formControlName="location" required />
+      <div class="form-group">
+        <label for="time">Heure :</label>
+        <input type="time" id="time" formControlName="time" required />
+      </div>
 
-    <button type="submit">Programmer l'Examen</button>
-    <button type="button" (click)="onCancel()">Annuler</button>
-  </form>
+      <div class="form-group">
+        <label for="location">Lieu :</label>
+        <input id="location" formControlName="location" required />
+      </div>
 
-  <div *ngIf="errorMessage" class="error-message">
-    {{ errorMessage }}
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" (click)="onCancel()">Annuler</button>
+        <button type="submit" class="btn-primary">Programmer l'examen</button>
+      </div>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
   </div>
 </div>

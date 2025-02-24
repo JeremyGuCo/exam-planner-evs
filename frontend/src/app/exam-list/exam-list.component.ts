@@ -9,8 +9,8 @@ import { StatusMappingService } from '../services/status-mapping.service';
   styleUrls: ['./exam-list.component.scss']
 })
 export class ExamListComponent implements OnInit {
-
   exams: Exam[] = [];
+  showAddExamDialog: boolean = false;
 
   constructor(
     private examService: ExamService,
@@ -18,19 +18,44 @@ export class ExamListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadExams();
+  }
+
+  /**
+   * Loads the list of exams from the service
+   */
+  loadExams(): void {
     this.examService.getExams().subscribe(data => {
-      this.exams = data.map((exam: Exam) => ({
-        ...exam,
-        status: exam.status.toLowerCase() in this.statusMappingService.statusMapping
-          ? exam.status.toLowerCase()
-          : 'searching',
-        date: exam.date || 'En attente',
-        time: exam.time || 'En attente',
-        location: exam.location || 'En attente'
-      }));
+      this.exams = data;
     });
   }
 
+  /**
+   * Handles the event when a new exam is added
+   */
+  onExamAdded(): void {
+    this.loadExams();
+  }
+
+  /**
+   * Opens the add exam dialog
+   */
+  openAddExamDialog(): void {
+    this.showAddExamDialog = true;
+  }
+
+  /**
+   * Closes the add exam
+   */
+  closeAddExamDialog(): void {
+    this.showAddExamDialog = false;
+  }
+
+  /**
+   * Gets the status information for a given status
+   * @param status - The status to get information for
+   * @returns The status information object
+   */
   getStatusInfo(status: string) {
     return this.statusMappingService.getStatusInfo(status);
   }

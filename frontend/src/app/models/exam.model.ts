@@ -1,12 +1,26 @@
 /**
- * Interface representing an exam.
+ * Interface representing data received from the API.
+ */
+export interface ExamApi {
+  id: number;
+  student: {
+    first_name: string;
+    last_name: string;
+  };
+  status: string;
+  meeting_point?: string;
+  date?: string;
+}
+
+/**
+ * Interface representing an exam for the frontend
  */
 export interface Exam {
-  id: number; // Unique identifier for the exam
-  firstName: string; // Student's first name
-  lastName: string; // Student's last name
-  status: string; // Exam status
-  date?: string; // Exam date
-  time?: string; // Exam time
-  location?: string; // Exam location
+  id: number;
+  firstName: string;
+  lastName: string;
+  status: string;
+  date?: string;
+  time?: string;
+  location?: string;
 }
