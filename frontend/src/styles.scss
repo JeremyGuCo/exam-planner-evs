@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+
+  &.confirmed {
+    background-color: #d4f8e8;
+    color: #28a745;
+  }
+  
+  &.to-organize {
+    background-color: #ffe5d5;
+    color: #ff6200;
+  }
+  
+  &.canceled {
+    background-color: #ffd5d5;
+    color: #dc3545;
+  }
+  
+  &.pending {
+    background-color: #e0e0e0;
+    color: #666;
+  }
+}
+
+.btn-primary {
+  background-color: #ff6200;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #e55a00;
+  }
+}

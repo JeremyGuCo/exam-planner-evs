@@ -7,13 +7,15 @@ import { AddExamComponent } from './add-exam/add-exam.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ItalicIfPendingDirective } from './directives/italic-if-pending.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExamListComponent,
     AddExamComponent,
-    FullnamePipe
+    FullnamePipe,
+    ItalicIfPendingDirective
   ],
   imports: [
     BrowserModule,

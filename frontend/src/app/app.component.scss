@@ -1,0 +1,17 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}

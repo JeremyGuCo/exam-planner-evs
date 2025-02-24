@@ -1,11 +1,15 @@
 <div class="container">
-  <h1>Exam Management</h1>
+  <div class="header">
+    <h2>Mes Examens</h2>
 
+    <button class="btn-primary" (click)="openAddExamDialog()">
+      Organiser un examen
+    </button>
+  </div>
   <app-exam-list></app-exam-list>
 
-  <div class="add-exam-button">
-    <button (click)="openAddExamDialog()">Schedule an Exam</button>
-  </div>
-
-  <app-add-exam *ngIf="showAddExamDialog" (close)="closeAddExamDialog()"></app-add-exam>
+  <app-add-exam
+    *ngIf="showAddExamDialog"
+    (close)="closeAddExamDialog()"
+  ></app-add-exam>
 </div>
