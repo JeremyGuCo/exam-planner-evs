@@ -6,12 +6,12 @@
       Organiser un examen
     </button>
   </div>
-  <app-exam-list (examAdded)="onExamAdded()"></app-exam-list>
+  <app-exam-list #examList></app-exam-list>
 
   <app-add-exam
     *ngIf="showAddExamDialog"
     (close)="closeAddExamDialog()"
-    (examAdded)="onExamAdded()"
+    (examAdded)="examList.onExamAdded()"
   ></app-add-exam>
 </div>
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ExamService } from '../services/exam.service';
-import { Exam } from '../models/exam.model';
+import { ExamService } from '../../../core/services/exam.service';
+import { Exam } from '../../../core/models/exam.model';
 import { StatusMappingService } from '../services/status-mapping.service';
 
 @Component({
@@ -54,7 +54,7 @@ export class ExamListComponent implements OnInit {
   /**
    * Gets the status information for a given status
    * @param status - The status to get information for
-   * @returns The status information object
+   * @returns The status informaton obje*ct
    */
   getStatusInfo(status: string) {
     return this.statusMappingService.getStatusInfo(status);

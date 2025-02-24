@@ -7,15 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showAddExamDialog: boolean = false;
-
+  /**
+   * Opens the dialog to add a new exam.
+   */
   openAddExamDialog(): void {
     this.showAddExamDialog = true;
   }
-
+  /**
+   * Closes the dialog to add a new exam.
+   */
   closeAddExamDialog(): void {
     this.showAddExamDialog = false;
   }
-
+  /**
+   * Handles the event when a new exam is added.
+   */
   onExamAdded(): void {
     this.closeAddExamDialog();
   }
