@@ -1,1 +1,8 @@
-<p>exam-list works!</p>
+<h2>My Exams</h2>
+<div *ngFor="let exam of exams">
+  <p>{{ exam | fullname }}</p>
+  <p>{{ exam.status }}</p>
+  <p>{{ exam.date }}</p>
+  <p>{{ exam.time }}</p>
+  <p>{{ exam.location }}</p>
+</div>

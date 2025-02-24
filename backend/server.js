@@ -2,19 +2,19 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const data = require('./mock-data.json')
 
 app.use(bodyParser.json());
 app.use(cors());
 
-let items = [];
 
 app.get('/api/exams', (req, res) => {
-  res.json(items);
+  res.json(data);
 });
 
 app.post('/api/exams', (req, res) => {
   const newItem = req.body;
-  items.push(newItem);
+  data.push(newItem);
   res.status(201).json(newItem);
 });
 
