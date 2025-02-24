@@ -1,1 +1,26 @@
-<p>add-exam works!</p>
+<div class="modal">
+  <h2>Ajouter un Examen</h2>
+  <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
+    <label for="firstName">Prénom :</label>
+    <input id="firstName" formControlName="firstName" required />
+
+    <label for="lastName">Nom :</label>
+    <input id="lastName" formControlName="lastName" required />
+
+    <label for="date">Date :</label>
+    <input id="date" formControlName="date" required />
+
+    <label for="time">Heure :</label>
+    <input id="time" formControlName="time" required />
+
+    <label for="location">Lieu :</label>
+    <input id="location" formControlName="location" required />
+
+    <button type="submit">Programmer l'Examen</button>
+    <button type="button" (click)="onCancel()">Annuler</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

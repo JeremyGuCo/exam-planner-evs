@@ -1,4 +1,5 @@
-<h2>My Exams</h2>
+<h2>Mes Examens</h2>
+<div>{{exams.length }} examens à venir</div>
 <div *ngFor="let exam of exams">
   <p>{{ exam | fullname }}</p>
   <p>{{ exam.status }}</p>
